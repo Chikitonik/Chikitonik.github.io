@@ -82,7 +82,7 @@
 					$header.css('background-position', 'left 0px');
 
 					$window.on('scroll.strata_parallax', function() {
-						$header.css('background-position', 'left ' + (-1 * (parseInt($window.scrollTop()) / settings.parallaxFactor)) + 'px');
+						$header.css('background-position', 'left' + (-1 * (parseInt($window.scrollTop()) / settings.parallaxFactor)) + 'px');
 					});
 
 				});
@@ -101,7 +101,7 @@
 				$('#two').poptrox({
 					caption: function($a) { return $a.next('h3').text(); },
 					overlayColor: '#2c2c2c',
-					overlayOpacity: 0.85,
+					overlayOpacity: 0.85, //was 0.85
 					popupCloserText: '',
 					popupLoaderText: '',
 					selector: '.work-item a.image',

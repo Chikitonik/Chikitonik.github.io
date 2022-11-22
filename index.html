@@ -1,660 +1,557 @@
-<!DOCTYPE HTML>
-<!--
-	Strata by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!DOCTYPE html lang="en">
 <html>
-	<head>
-		<title>Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
 
-		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
-					<h1><strong>Roman Kholodkov&nbsp;</strong><br />
-						<div class="inner">
-					  	Data Science specialist
-						</div>
-						<div class="inner">
-						Country: Israel
-						</div>
-						<div class="inner">
-						Languages:
-							</div>
-							<div class="inner">
-							Hebrew - alef+
-							</div>
-							<div class="inner">
-							English - upper intermediate
-							</div>
-							<div class="inner">
-							Russian - native
-							</div>
-						</h1>
-						</div>
-			</header>
+<head>
+  <title>Roman Kholodkov</title>
+  <meta charset="UTF-8">
+  <!-- bootstrap for mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- HOSTED -->
+  <!-- canvas -->
+  <script src='https://code.createjs.com/easeljs-0.7.1.min.js'></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+  <!-- bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <!-- bootstrap JavaScript Bundle with Popper (for modal)-->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <!-- icons -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" /> -->
+  <script src="https://kit.fontawesome.com/784c01cd05.js" crossorigin="anonymous"></script>
+  <!-- LOCAL -->
+  <link rel="stylesheet" href="style.css">
+</head>
 
-		<!-- Main -->
-			<div id="main">
+<body>
+  <!-- #region Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark w-100">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+        <!-- <span class="navbar-toggler-icon"></span> -->
+      </button>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav justify-content-around w-100">
+          <li class="nav-item">
+            <a class="home nav-link js-scroll-trigger px-5 active" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="about nav-link js-scroll-trigger px-5" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="portfolio nav-link js-scroll-trigger px-5" href="#portfolio">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="contact nav-link js-scroll-trigger px-5" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- #endregion Navbar -->
+  <!-- #region HOME -->
+  <section id="home" class="
+    d-flex
+    flex-column
+    justify-content-center
+    align-items-center
+    text-center
+    height-fix">
+    <!-- bootstrap/CSS
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; -->
+    <canvas id="projector" class="position-absolute">Your browser does not support the Canvas element.</canvas>
+    <div class="text-main-canvas h1 text-light position-relative text-shadow">
+      <strong>
+        Hello, I'm <span class="highlight">Roman Kholodkov</span>.
+        <p>I'm a full-stack web developer</p>
+        <p>and data scientist.</p>
+      </strong>
+    </div>
+    <div class="button-main-canvas" onclick="ButtonMainCanvasClick()">
+      About me
+      <div class="arrow">
+        <div class="arrow-left"></div>
+        <div class="arrow-right"></div>
+      </div>
+    </div>
+  </section>
+  <!-- #endregion HOME -->
+  <!-- #region ABOUT -->
+  <section id="about" class="pt-5 d-flex flex-column bg-light">
+    <div class="h1 w-100 pt-3 mb-5 text-center slide-from-right text-shadow hidden">
+      About
+    </div>
+    <!-- #region tools -->
+    <div class="row ms-3 mb-5">
+      <div class="col-2">
+        <div class="flip-card-text flip-appear hidden">
+          <div class="flip-card-inner flip-appear">
+            <div class="flip-card-front"></div>
+            <div class="flip-card-back h3">Tools I use</div>
+            </a>
+          </div>
+        </div>
+        <div class="flip-card flip-appear hidden">
+          <div class="flip-card-inner flip-appear">
+            <div class="flip-card-front"></div>
+            <div class="flip-card-back">
+              <a href="https://www.sap.com" target="_blank" rel="noreferrer">
+                <img class="img-fluid" src="img/sap_erp.png" alt="sap" title="sap" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card flip-appear hidden">
+          <div class="flip-card-inner flip-appear">
+            <div class="flip-card-front"></div>
+            <div class="flip-card-back">
+              <a href="https://www.python.org" target="_blank" rel="noreferrer">
+                <img class="img-fluid"
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"
+                  alt="python" title="python" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mx-2 flip-card flip-appear hidden">
+          <div class="flip-card-inner flip-appear">
+            <div class="flip-card-front"></div>
+            <div class="flip-card-back">
+              <a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer">
+                <img class="img-fluid"
+                  src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg"
+                  alt="pandas" title="pandas" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mx-4 flip-card flip-appear hidden">
+          <div class="flip-card-inner flip-appear">
+            <div class="flip-card-front"></div>
+            <div class="flip-card-back">
+              <a href="https://www.djangoproject.com/" target="_blank" rel="noreferrer">
+                <img class="img-fluid" src="https://cdn.worldvectorlogo.com/logos/django.svg" alt="django"
+                  title="django" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card flip-appear hidden">
+          <div class="flip-card-inner flip-appear">
+            <div class="flip-card-front"></div>
+            <div class="flip-card-back">
+              <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer">
+                <img class="img-fluid"
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg"
+                  alt="html5" title="html5" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mx-2 flip-card flip-appear hidden">
+          <div class="flip-card-inner flip-appear">
+            <div class="flip-card-front"></div>
+            <div class="flip-card-back">
+              <a href="https://getbootstrap.com" target="_blank" rel="noreferrer">
+                <img class="img-fluid"
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg"
+                  alt="bootstrap" title="bootstrap" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mx-4 flip-card flip-appear hidden">
+          <div class="flip-card-inner flip-appear">
+            <div class="flip-card-front"></div>
+            <div class="flip-card-back">
+              <a href="https://reactjs.org/" target="_blank" rel="noreferrer">
+                <img class="img-fluid"
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg"
+                  alt="react" title="react" />
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="flip-card flip-appear hidden">
+          <div class="flip-card-inner flip-appear">
+            <div class="flip-card-front"></div>
+            <div class="flip-card-back">
+              <a href="https://www.docker.com/" target="_blank" rel="noreferrer">
+                <img class="img-fluid"
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg"
+                  alt="docker" title="docker" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mx-2 flip-card flip-appear hidden">
+          <div class="flip-card-inner flip-appear">
+            <div class="flip-card-front"></div>
+            <div class="flip-card-back">
+              <a href="https://git-scm.com/" target="_blank" rel="noreferrer">
+                <img class="img-fluid" src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git"
+                  title="git" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mx-4 flip-card flip-appear hidden">
+          <div class="flip-card-inner flip-appear">
+            <div class="flip-card-front"></div>
+            <div class="flip-card-back">
+              <a href="https://www.postgresql.org" target="_blank" rel="noreferrer">
+                <img class="img-fluid"
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg"
+                  alt="postgresql" title="postgresql" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- #endregion tools -->
+      <div class="mx-2 col-9">
+        <div class="row">
+          <div class="col-md-4 slide-from-left hidden">
+            <img src="img/avatar_rhombus.png" class="avatar" alt="Avatar">
+            <div class="mx-5 h-5"><strong>Roman Kholodkov</strong></div>
+            <p class="text-muted mx-4">full-stack web developer</p>
+          </div>
+          <div class="row">
+            <div class="col-md-8 slide-from-right hidden">
+              <p>I've been living in Israel since the end of
+                2020 with my beloved family. I am highly experienced in
+                <a href="https://github.com/Chikitonik/SAP-ERP" target="_blank"> SAP ERP</a>,
+                have skills in
+                <a href="https://github.com/Chikitonik/excel-vba/" target="_blank">Excel VBA</a>
+                and in SQL queries. I have
+                <a href="https://github.com/Chikitonik/Chikitonik/blob/main/Roman%20Kholodkov_20222DS00255.pdf"
+                  target="_blank">completed</a>
+                the online course of Yandex.practicum
+                <a href="https://practicum.yandex.com/data-scientist/" target="_blank">Data scientist</a>,
+                I also participate in different competitions on Kaggle.com and
+                improve my skills on other platforms.
+                I’m currently studying on <a
+                  href="https://developers.institute/en/portfolios/best-coding-bootcamp-tel-aviv-israel/"
+                  target="_blank">developers.institute</a>
+                <br>
+                You can find my CV <a
+                  href="https://github.com/Chikitonik/Chikitonik/blob/main/Resume-Roman-Kholodkov.pdf"
+                  target="_blank">here</a> or on <a href="https://www.linkedin.com/in/roman-kholodkov"
+                  target="_blank">LinkedIn</a>, links to my jupyter notebooks below, also you can find my works on <a
+                  href="https://www.kaggle.com/romankholodkov" target="_blank">Kaggle</a>.
+                <br>My email: <a
+                  href="mailto:chikitonik@gmail.com?subject = Feedback&body = Message:">chikitonik@gmail.com</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- #endregion ABOUT -->
+  <!-- #region PORTFOLIO -->
+  <section id="portfolio" class="pt-5 d-flex flex-column bg-white">
+    <div class="h1 w-100 pt-3 mb-5 text-center slide-from-right text-shadow hidden">
+      Portfolio
+    </div>
+    <div class="tabs row">
+      <div class="col-12 text-center">
+        <button class="tablinks mx-2 slide-from-left hidden active"
+          onclick="activateTab(event, 'gallery-card')">All</button>
+        <button class="tablinks mx-2 slide-from-left hidden"
+          onclick="activateTab(event, 'tablink-full-stack')">Full-stack</button>
+        <button class="tablinks mx-2 slide-from-left hidden" onclick="activateTab(event, 'tablink-data-science')">Data
+          science</button>
+      </div>
+    </div>
+    <!-- #region works -->
+    <div class="row m-3">
+      <!-- work card -->
+      <div class="row m-0 p-0 gallery-card tablink-data-science active hidden"
+        style="background-image: url('img/projects/house-prices-kaggle.png')">
+        <div class="row h-100 card-content d-flex align-items-start flex-column">
+          <div class="row mx-2 align-items-start text-center">
+            <div class="h3 col-12 card-header">House prices prediction</div>
+          </div>
+          <div class="row align-items-end mt-auto p-2 justify-content-center mx-auto">
+            <div id="house-prices-kaggle" class="col-12 button-gallery-card" data-toggle="modal"
+              data-target="#modalCenter" onclick=ButtonCardClick(this.id)>
+              <p>more</p>
+            </div>
+          </div>
+          <div id="house-prices-kaggle-description" class="d-none">
+            <p id="house-prices-kaggle-description-title">House prices prediction</p>
+            <p id="house-prices-kaggle-description-text">
+              Task is to build a model which will be predicting the house prices.
+              That is a competition at Kaggle (top 3%), <a
+                href="https://github.com/Chikitonik/house-prices-kaggle/blob/main/house_prices_kaggle.ipynb"
+                target="_blank"> view work</a> in the form iPython Notebook
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- work card -->
+      <div class="row m-0 p-0 gallery-card tablink-data-science active hidden"
+        style="background-image: url('img/projects/taxi-orders-prediction.png')">
+        <div class="row h-100 card-content d-flex align-items-start flex-column">
+          <div class="row mx-2 align-items-start text-center">
+            <div class="h3 col-12 card-header">Taxi orders prediction</div>
+          </div>
+          <div class="row align-items-end mt-auto p-2 justify-content-center mx-auto">
+            <div id="taxi-orders-prediction" class="button-gallery-card" data-toggle="modal" data-target="#modalCenter"
+              onclick=ButtonCardClick(this.id)>
+              <p>more</p>
+            </div>
+          </div>
+          <div id="taxi-orders-prediction-description" class="d-none">
+            <p id="taxi-orders-prediction-description-title">Taxi orders prediction</p>
+            <p id="taxi-orders-prediction-description-text">
+              Task is to build a model which will have RMSE lower than 48. <a
+                href="https://github.com/Chikitonik/taxi-orders/blob/main/12_taxi_orders.ipynb" target="_blank"> View
+                work</a> in the form iPython Notebook
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- work card -->
+      <div class="row m-0 p-0 gallery-card tablink-full-stack active hidden"
+        style="background-image: url('img/projects/armtek-support.png')">
+        <div class="row h-100 card-content d-flex align-items-start flex-column">
+          <div class="row mx-2 align-items-start text-center">
+            <div class="h3 col-12 card-header">Armtek online shop / SAP ERP support</div>
+          </div>
+          <div class="row align-items-end mt-auto p-2 justify-content-center mx-auto">
+            <div id="armtek-support" class="button-gallery-card" data-toggle="modal" data-target="#modalCenter"
+              onclick=ButtonCardClick(this.id)>
+              <p>more</p>
+            </div>
+          </div>
+          <div id="armtek-support-description" class="d-none">
+            <p id="armtek-support-description-title">Armtek online shop / SAP ERP support</p>
+            <p id="armtek-support-description-text">
+              Supporting online shop <a href="https://etp.armtek.eu" target="_blank"> Armtek</a>, API and SAP ERP
+              support
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- work card -->
+      <div class="row m-0 p-0 gallery-card tablink-data-science active hidden"
+        style="background-image: url('img/projects/toxic-comment-classification.png')">
+        <div class="row h-100 card-content d-flex align-items-start flex-column">
+          <div class="row mx-2 align-items-start text-center">
+            <div class="h3 col-12 card-header">Toxic comments classification</div>
+          </div>
+          <div class="row align-items-end mt-auto p-2 justify-content-center mx-auto">
+            <div id="toxic-comment-classification" class="col-12 button-gallery-card" data-toggle="modal"
+              data-target="#modalCenter" onclick=ButtonCardClick(this.id)>
+              <p>more</p>
+            </div>
+          </div>
+          <div id="toxic-comment-classification-description" class="d-none">
+            <p id="toxic-comment-classification-description-title">Toxic comments classification</p>
+            <p id="toxic-comment-classification-description-text">
+              Toxic comment classification, BERT solution.. <a
+                href="https://github.com/Chikitonik/toxic-comments/blob/main/toxic_comments.ipynb" target="_blank"> View
+                work</a> in the form iPython Notebook
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- work card -->
+      <div class="row m-0 p-0 gallery-card tablink-data-science active hidden"
+        style="background-image: url('img/projects/churn-clients.png')">
+        <div class="row h-100 card-content d-flex align-items-start flex-column">
+          <div class="row mx-2 align-items-start text-center">
+            <div class="h3 col-12 card-header">Churn bank clients prediction</div>
+          </div>
+          <div class="row align-items-end mt-auto p-2 justify-content-center mx-auto">
+            <div id="churn-clients" class="col-12 button-gallery-card" data-toggle="modal" data-target="#modalCenter"
+              onclick=ButtonCardClick(this.id)>
+              <p>more</p>
+            </div>
+          </div>
+          <div id="churn-clients-description" class="d-none">
+            <p id="churn-clients-description-title">Churn bank clients prediction</p>
+            <p id="churn-clients-description-text">
+              Work on kaggle.com, task is to predict whether the client leaves the bank in the near future or not. <a
+                href="https://github.com/Chikitonik/churn-clients/blob/main/churn-clients.ipynb" target="_blank"> View
+                work</a> in the form iPython Notebook
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- work card -->
+      <div class="row m-0 p-0 gallery-card tablink-data-science active hidden"
+        style="background-image: url('img/projects/gold-recovery.png')">
+        <div class="row h-100 card-content d-flex align-items-start flex-column">
+          <div class="row mx-2 align-items-start text-center">
+            <div class="h3 col-12 card-header">Gold recovery rate prediction</div>
+          </div>
+          <div class="row align-items-end mt-auto p-2 justify-content-center mx-auto">
+            <div id="gold-recovery" class="col-12 button-gallery-card" data-toggle="modal" data-target="#modalCenter"
+              onclick=ButtonCardClick(this.id)>
+              <p>more</p>
+            </div>
+          </div>
+          <div id="gold-recovery-description" class="d-none">
+            <p id="gold-recovery-description-title">Gold recovery rate prediction</p>
+            <p id="gold-recovery-description-text">
+              Task is to build a model which will be predicting the gold recovery rate from gold ore. <a
+                href="https://github.com/Chikitonik/gold-mining/blob/main/gold_mining.ipynb" target="_blank"> View
+                work</a> in the form iPython Notebook
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- end works -->
+    </div>
+    <!-- #endregion works -->
+    <!-- modal -->
+    <!-- dynamic in ButtonCardClick -->
+    <div class="modal fade" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content rounded-0">
+          <div class="modal-body m-0 p-0 text-center">
+            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                  aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                  aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                  aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                  <img id="carousel-item-img-1" class="img-fluid d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                  <img id="carousel-item-img-2" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img id="carousel-item-img-3" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="row">
+              <div id="modal-footer-title" class="h3"></div>
+              <div id="modal-footer-text"></div>
+            </div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
-				<!-- One -->
-					<section id="one">
-						<header class="major">
-							<h2>Hi, I'm Roman Kholodkov</h2>
-						</header>
-						<p>I've been living in Israel since the end of  2020 with my beloved family. I am highly experienced in <a href="https://github.com/Chikitonik/SAP-ERP" target="_blank"> SAP ERP</a>, have skills in <a href="https://github.com/Chikitonik/excel-vba/" target="_blank">Excel VBA</a> and in SQL queries. My new goal is to expand knowledge in the  Data Science field.
-							 To improve and acquire the necessary knowledge I have <a href="https://github.com/Chikitonik/Chikitonik/blob/main/Roman%20Kholodkov_20222DS00255.pdf" target="_blank">completed</a> the online course of Yandex.practicum <a href="https://practicum.yandex.com/data-scientist/" target="_blank">Data scientist</a>, I also participate in different competitions on Kaggle.com and improve my skills on other platforms.
-						<br>
-						 You can find my CV <a href="https://github.com/Chikitonik/Chikitonik/blob/main/Resume-Roman-Kholodkov.pdf" target="_blank">here</a> or on <a href="https://www.linkedin.com/in/roman-kholodkov" target="_blank">LinkedIn</a>, links to my jupyter notebooks below, also you can find my works on <a href="https://www.kaggle.com/romankholodkov" target="_blank">Kaggle</a>.
-							<br>My email: <a href="mailto:chikitonik@gmail.com?subject = Feedback&body = Message:">chikitonik@gmail.com</a></p>
-							<br>Portfolio contains data science projects completed by me for academic, self-study, and hobby purposes. Presented in the form of iPython Notebook
-					  <!--<ul class="actions">
-							<li><a href="#" class="button">Learn More</a></li>
-						</ul>-->
-					</section>
+  </section>
+  <!-- #endregion PORTFOLIO -->
+  <!-- #region CONTACT -->
+  <section id="contact" class="bg-dark">
+    <div class="row bg-light">
+      <div class="h1 w-100 pt-3 mb-5 mt-5 text-center slide-from-right text-shadow hidden">
+        Contact
+      </div>
+    </div>
+    <svg preserveAspectRatio="none" viewBox="0 0 100 102" height="150" width="100%">
+      <path d="M0 0 L50 100 L100 0 Z" fill="#f8f9fa" stroke="white"></path>
+      
+      <line x1="-2" y1="20" x2="50" y2="122" stroke="#f8f9fa" stroke-width="2"/>
+      <line x1="50" y1="122" x2="102" y2="20" stroke="#f8f9fa" stroke-width="2"/>
+    </svg>
+    <!-- get in touch using https://formspree.io -->
+    <div class="col-12 mb-3 text-center">
+      <form class="contact-form shadow" action="https://formspree.io/f/xqkjzjvz" method="POST">
+        <div class="h4">Send me a letter</div>
+        <div class="row">
+          <div type="Email:"><input type="email" name="email" placeholder="Your email"></div>
+        </div>
+        <div class="row">
+          <div><textarea rows="3" name="message" placeholder="Your message"></textarea></div>
+        </div>
+        <button class="mail-btn" type="submit">send</button>
+      </form>
+    </div>
 
-				<!-- Two -->
-					<section id="two">
-	<h2>Portfolio</h2>
-						<!-- начало описания одной работы -->
-						<div class="row">
-							<div class="row post-preview">
-                          		<div class="col-lg-1 col-md-1 col-xs-1 d-flex justify-content-center img-fluid align-self-center">
-                            		<img src="images/git.jpg">
-									<a href="https://www.kaggle.com/romankholodkov/competitions?tab=active" target="_blank">
-									<img src="images/kaggle.jpg">
-									</a>
-                          		</div>
-								<div>
-									<h2 class="post-title">
-									<a href="https://github.com/Chikitonik/house-prices-kaggle/blob/main/house_prices_kaggle.ipynb" target="_blank">House prices prediction
-									</a>
-									<p style = "font-family:georgia,garamond,serif;font-size:16px;font-style:italic;">
-										Task is to build a model which will be predicting the house prices.
-										<br> That is a competition at Kaggle (top 12%) </p>
-								</div>
-							</div>
-						</div>
-						<!-- конец описания одной работы -->
-						<!-- начало описания одной работы -->
-						<div class="row">
-							<div class="row post-preview">
-                          		<div class="col-lg-1 col-md-1 col-xs-1 d-flex justify-content-center img-fluid align-self-center">
-                            		<img src="images/git.jpg">
-									</a>
-                          		</div>
-								<div>
-									<h2 class="post-title">
-									<a href="https://github.com/Chikitonik/toxic-comments/blob/main/toxic_comments.ipynb" target="_blank">Toxic comments classification
-									</a>
-									<p style = "font-family:georgia,garamond,serif;font-size:16px;font-style:italic;">
-										Toxic comment classification, BERT solution.
-								</div>
-							</div>
-						</div>
-						<!-- конец описания одной работы -->
-						<!-- начало описания одной работы -->
-						<div class="row">
-							<div class="row post-preview">
-                          		<div class="col-lg-1 col-md-1 col-xs-1 d-flex justify-content-center img-fluid align-self-center">
-                            		<img src="images/git.jpg">
-									</a>
-                          		</div>
-								<div>
-									<h2 class="post-title">
-									<a href="https://github.com/Chikitonik/taxi-orders/blob/main/12_taxi_orders.ipynb" target="_blank">Taxi orders prediction
-									</a>
-									<p style = "font-family:georgia,garamond,serif;font-size:16px;font-style:italic;">
-										Task is to build a model which will have RMSE lower than 48.
-								</div>
-							</div>
-						</div>
-						<!-- конец описания одной работы -->
-						<!-- начало описания одной работы -->
-						<div class="row">
-							<div class="row post-preview">
-                          		<div class="col-lg-1 col-md-1 col-xs-1 d-flex justify-content-center img-fluid align-self-center">
-                            		<img src="images/git.jpg">
-									</a>
-                          		</div>
-								<div>
-									<h2 class="post-title">
-									<a href="https://github.com/Chikitonik/car-prices/blob/main/11_car_prices.ipynb" target="_blank">Car prices prediction
-									</a>
-									<p style = "font-family:georgia,garamond,serif;font-size:16px;font-style:italic;">
-										Task is to build a model which have best RMSE/prediction time.
-								</div>
-							</div>
-						</div>
-						<!-- конец описания одной работы -->
-						<!-- начало описания одной работы -->
-						<div class="row">
-							<div class="row post-preview">
-                          		<div class="col-lg-1 col-md-1 col-xs-1 d-flex justify-content-center img-fluid align-self-center">
-                            		<img src="images/git.jpg">
-								</div>
-								<div>
-									<h2 class="post-title">
-									<a href="https://github.com/Chikitonik/gold-mining/blob/main/gold_mining.ipynb" target="_blank">Gold recovery rate prediction
-									</a>
-									<p style = "font-family:georgia,garamond,serif;font-size:16px;font-style:italic;">
-										Task is to build a model which will be predicting the gold recovery rate from gold ore. </p>
-								</div>
-							</div>
-						</div>
-						<!-- конец описания одной работы -->
-						<!-- начало описания одной работы -->
-						<div class="row">
-							<div class="row post-preview">
-                          		<div class="col-lg-1 col-md-1 col-xs-1 d-flex justify-content-center img-fluid align-self-center">
-                            		<img src="images/git.jpg">
-									<a href="https://www.kaggle.com/romankholodkov/churn-clients" target="_blank">
-									<img src="images/kaggle.jpg">
-									</a>
-                          		</div>
-								<div>
-									<h2 class="post-title">
-									<a href="https://github.com/Chikitonik/churn-clients/blob/main/churn-clients.ipynb" target="_blank">
-										Churn bank clients prediction
-									</a>
-									<p style = "font-family:georgia,garamond,serif;font-size:16px;font-style:italic;">
-										Work on kaggle.com, task is to predict whether the client leaves the bank in the near future or not. </p>
-								</div>
-							</div>
-						</div>
-						<!-- конец описания одной работы -->		
-						<!-- начало описания одной работы -->
-						<div>
-									<a> 
-									</a>
-							<p style = "font-family:georgia,garamond,serif;font-size:16px;">
-										Projects in Russian (I translate them in free time):</p>
-						</div>
-						<!-- конец описания одной работы -->	
-						<!-- начало описания одной работы -->
-						<div class="row">
-							<div class="row post-preview">
-                          		<div class="col-lg-1 col-md-1 col-xs-1 d-flex justify-content-center img-fluid align-self-center">
-                            		<img src="images/git.jpg">
-                          		</div>
-								<div>
-									<h2 class="post-title">
-									<a href="https://github.com/Chikitonik/insurance-data-protection/blob/main/insurance_data_protection.ipynb" target="_blank">
-										Protection of insurance company data
-									</a>
-									<p style = "font-family:georgia,garamond,serif;font-size:16px;font-style:italic;">
-										Algorithm to protect data not losing prediction model quality </p>
-								</div>
-							</div>
-						</div>
-						<!-- конец описания одной работы -->
-						<!-- начало описания одной работы -->
-						<div class="row">
-							<div class="row post-preview">
-                          		<div class="col-lg-1 col-md-1 col-xs-1 d-flex justify-content-center img-fluid align-self-center">
-                            		<img src="images/git.jpg">
-                          		</div>
-								<div>
-									<h2 class="post-title">
-									<a href="https://github.com/Chikitonik/geo-location/blob/main/geo_location.ipynb" target="_blank">
-										Locations for oil wells
-									</a>
-									<p style = "font-family:georgia,garamond,serif;font-size:16px;font-style:italic;">
-										Finding the best locations for oil wells using bootstrap </p>
-								</div>
-							</div>
-						</div>
-						<!-- конец описания одной работы -->	
-						<!-- начало описания одной работы -->
-						<div class="row">
-							<div class="row post-preview">
-                          		<div class="col-lg-1 col-md-1 col-xs-1 d-flex justify-content-center img-fluid align-self-center">
-                            		<img src="images/git.jpg">
-                          		</div>
-								<div>
-									<h2 class="post-title">
-									<a href="https://github.com/Chikitonik/phone-plans-recomendation/blob/main/phone_plans_recomendation.ipynb" target="_blank">
-										Phone plans recomendation
-									</a>
-									<p style = "font-family:georgia,garamond,serif;font-size:16px;font-style:italic;">
-										Finding the best phone plans for the customers </p>
-								</div>
-							</div>
-						</div>
-						<!-- конец описания одной работы -->
-                        </div>
+    <footer id="footer" class="flex-shrink-0 py-5 bg-dark">
+      <div class="row justify-content-center">
+        <div class="button-footer-home" onclick="window.location.href='#home'">
+          <div class="arrow">
+            <div class="arrow-footer-left"></div>
+            <div class="arrow-footer-right"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 text-center">
+        <a class="h4">Find me here:</a>
+        <a href="https://api.whatsapp.com/send?phone=+972504694780" target="_blank" title="whatsapp">
+          <i class="fa-2x mx-1 fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/roman-kholodkov-sap-sd" target="_blank" title="linkedin">
+          <i class="fa-2x mx-1 fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/Chikitonik" target="_blank" title="github">
+          <i class="fa-2x mx-1 fa-brands fa-github"></i>
+        </a>
+        <a href="https://www.kaggle.com/romankholodkov" target="_blank" title="kaggle">
+          <i class="fa-2x mx-1 fa-brands fa-kaggle"></i>
+        </a>
+        <a href="mailto:chikitonik@gmail.com?subject = Feedback&body = Message:" title="mail">
+          <i class="fa-2x mx-1 fa-solid fa-envelope"></i>
+        </a>
+      </div>
+    </footer>
 
-							
-							
-							<!--<article class="col-6 col-12-xsmall work-item">
-								<a href="https://github.com/Chikitonik/gold-mining" class="image featured" target="_blank">
-									<img src="images/thumbs/01.jpg" alt=""/>
-								</a>
-									<h3 style="text-align:center;"><strong>Golg mining</strong></h3>
-								<p style="text-align:center;">machine learning &#9679;</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/02.jpg" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="" /></a>
-								<h3>Ultricies lacinia interdum</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/03.jpg" class="image fit thumb"><img src="images/thumbs/03.jpg" alt="" /></a>
-								<h3>Tortor metus commodo</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/04.jpg" class="image fit thumb"><img src="images/thumbs/04.jpg" alt="" /></a>
-								<h3>Quam neque phasellus</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/05.jpg" class="image fit thumb"><img src="images/thumbs/05.jpg" alt="" /></a>
-								<h3>Nunc enim commodo aliquet</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/06.jpg" class="image fit thumb"><img src="images/thumbs/06.jpg" alt="" /></a>
-								<h3>Risus ornare lacinia</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-						</div>
-						<ul class="actions">
-							<li><a href="#" class="button">Full Portfolio</a></li>
-						</ul>
-					</section>-->
+  </section>
+  <!-- #endregion CONTACT -->
 
-				<!-- Three -->
-					<!--<section id="three">
-						<h2>Get In Touch</h2>
-						<p>You can leave a message&nbsp;</p>
-						<div class="row">
-							<div class="col-8 col-12-small">
-								<form method="post" action="#">
-									<div class="row gtr-uniform gtr-50">
-										<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-										<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
-										<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
-									</div>
-								</form>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</div>
-							<div class="col-4 col-12-small">
-								<ul class="labeled-icons">
-									<li>
-										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
-										Israel<br />
-										<br />
-										
-									</li>
-									<li>
-										<h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>
-										000-000-0000
-									</li>
-									<li>
-										<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
-										<a href="#">chikitonik@gmail.com</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</section> -->
+  <!-- script canvas and main js always before end of body-->
+  <script type="text/javascript" src="scripts/canvas.js"></script>
+  <script type="text/javascript" src="scripts/index.js"></script>
+  <!-- script to collapse nav bar toggler after click -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    $('.js-scroll-trigger').click(function () {
+      $('.navbar-collapse').collapse('hide');
+    });
+  </script>
 
-				<!-- Four -->
-				<!--
-					<section id="four">
-						<h2>Elements</h2>
+  <link rel="stylesheet" href="style.css">
 
-						<section>
-							<h4>Text</h4>
-							<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-							This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-							This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-							<hr />
-							<header>
-								<h4>Heading with a Subtitle</h4>
-								<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-							</header>
-							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-							<header>
-								<h5>Heading with a Subtitle</h5>
-								<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-							</header>
-							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-							<hr />
-							<h2>Heading Level 2</h2>
-							<h3>Heading Level 3</h3>
-							<h4>Heading Level 4</h4>
-							<h5>Heading Level 5</h5>
-							<h6>Heading Level 6</h6>
-							<hr />
-							<h5>Blockquote</h5>
-							<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-							<h5>Preformatted</h5>
-							<pre><code>i = 0;
+</body>
 
-while (!deck.isInOrder()) {
-print 'Iteration ' + i;
-deck.shuffle();
-i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-						</section>
-
-						<section>
-							<h4>Lists</h4>
-							<div class="row">
-								<div class="col-6 col-12-xsmall">
-									<h5>Unordered</h5>
-									<ul>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Sagittis adipiscing lorem eleifend.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ul>
-									<h5>Alternate</h5>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Sagittis adipiscing lorem eleifend.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-xsmall">
-									<h5>Ordered</h5>
-									<ol>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Etiam vel felis at lorem sed viverra.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Etiam vel felis at lorem sed viverra.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ol>
-									<h5>Icons</h5>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-										<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-										<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
-									</ul>
-								</div>
-							</div>
-							<h5>Actions</h5>
-							<ul class="actions">
-								<li><a href="#" class="button primary">Default</a></li>
-								<li><a href="#" class="button">Default</a></li>
-							</ul>
-							<ul class="actions small">
-								<li><a href="#" class="button primary small">Small</a></li>
-								<li><a href="#" class="button small">Small</a></li>
-							</ul>
-							<div class="row">
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary small">Small</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary fit">Default</a></li>
-										<li><a href="#" class="button fit">Default</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary small fit">Small</a></li>
-										<li><a href="#" class="button small fit">Small</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-
-						<section>
-							<h4>Table</h4>
-							<h5>Default</h5>
-							<div class="table-wrapper">
-								<table>
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Description</th>
-											<th>Price</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Item One</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Two</td>
-											<td>Vis ac commodo adipiscing arcu aliquet.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Three</td>
-											<td> Morbi faucibus arcu accumsan lorem.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Four</td>
-											<td>Vitae integer tempus condimentum.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Five</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-									</tbody>
-									<tfoot>
-										<tr>
-											<td colspan="2"></td>
-											<td>100.00</td>
-										</tr>
-									</tfoot>
-								</table>
-							</div>
-
-							<h5>Alternate</h5>
-							<div class="table-wrapper">
-								<table class="alt">
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Description</th>
-											<th>Price</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Item One</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Two</td>
-											<td>Vis ac commodo adipiscing arcu aliquet.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Three</td>
-											<td> Morbi faucibus arcu accumsan lorem.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Four</td>
-											<td>Vitae integer tempus condimentum.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Five</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-									</tbody>
-									<tfoot>
-										<tr>
-											<td colspan="2"></td>
-											<td>100.00</td>
-										</tr>
-									</tfoot>
-								</table>
-							</div>
-						</section>
-
-						<section>
-							<h4>Buttons</h4>
-							<ul class="actions">
-								<li><a href="#" class="button primary">Primary</a></li>
-								<li><a href="#" class="button">Default</a></li>
-							</ul>
-							<ul class="actions">
-								<li><a href="#" class="button large">Large</a></li>
-								<li><a href="#" class="button">Default</a></li>
-								<li><a href="#" class="button small">Small</a></li>
-							</ul>
-							<ul class="actions fit">
-								<li><a href="#" class="button primary fit">Fit</a></li>
-								<li><a href="#" class="button fit">Fit</a></li>
-							</ul>
-							<ul class="actions fit small">
-								<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-								<li><a href="#" class="button fit small">Fit + Small</a></li>
-							</ul>
-							<ul class="actions">
-								<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-								<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-							</ul>
-							<ul class="actions">
-								<li><span class="button primary disabled">Primary</span></li>
-								<li><span class="button disabled">Default</span></li>
-							</ul>
-						</section>
-
-						<section>
-							<h4>Form</h4>
-							<form method="post" action="#">
-								<div class="row gtr-uniform gtr-50">
-									<div class="col-6 col-12-xsmall">
-										<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-									</div>
-									<div class="col-6 col-12-xsmall">
-										<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-									</div>
-									<div class="col-12">
-										<select name="demo-category" id="demo-category">
-											<option value="">- Category -</option>
-											<option value="1">Manufacturing</option>
-											<option value="1">Shipping</option>
-											<option value="1">Administration</option>
-											<option value="1">Human Resources</option>
-										</select>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-										<label for="demo-priority-low">Low Priority</label>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-normal" name="demo-priority">
-										<label for="demo-priority-normal">Normal Priority</label>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-high" name="demo-priority">
-										<label for="demo-priority-high">High Priority</label>
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="checkbox" id="demo-copy" name="demo-copy">
-										<label for="demo-copy">Email me a copy of this message</label>
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="checkbox" id="demo-human" name="demo-human" checked>
-										<label for="demo-human">I am a human and not a robot</label>
-									</div>
-									<div class="col-12">
-										<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-									</div>
-									<div class="col-12">
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</div>
-								</div>
-							</form>
-						</section>
-
-						<section>
-							<h4>Image</h4>
-							<h5>Fit</h5>
-							<div class="box alt">
-								<div class="row gtr-50 gtr-uniform">
-									<div class="col-12"><span class="image fit"><img src="images/fulls/05.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/01.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/04.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/05.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/06.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/01.jpg" alt="" /></span></div>
-								</div>
-							</div>
-							<h5>Left &amp; Right</h5>
-							<p><span class="image left"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-							<p><span class="image right"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-						</section>
-
-					</section>
-				-->
-
-			</div>
-
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<li><a href="https://api.whatsapp.com/send?phone=+972504694780" class="icon brands fa-whatsapp"><span class="label">whatsapp</span></a></li>
-						<li><a href="https://www.linkedin.com/in/roman-kholodkov-sap-sd" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-						<li><a href="https://github.com/Chikitonik" target="_blank" class="icon brands fa-github" target="_blank" ><span class="label">Github</span></a></li>
-						<li><a href="https://www.kaggle.com/romankholodkov" target="_blank" class="icon brands fa-kaggle"><span cwhatsapplass="label"></span></a></li>
-						<li><a href="mailto:chikitonik@gmail.com?subject = Feedback&body = Message:"class="icon solid fa-envelope"><span class="label">Mail</span></a></li>
-						
-						
-					</ul>
-					<ul class="copyright">
-					  <!-- <li>&copy; Untitled</li> 
-						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li> -->
-				  </ul>
-			  </div>
-			</footer>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-							</body>
 </html>
